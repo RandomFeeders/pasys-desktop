@@ -1,0 +1,21 @@
+{
+	"name": "pasys-desktop",
+	"version": "0.0.0",
+	"main": "./build/main.js",
+	"type": "module",
+	"engines": {
+		"node": "^18.12.1",
+		"yarn": "1.22.19"
+	},
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RandomFeeders/pasys-desktop.git"
+	},
+	"author": "Random Feeders <contato@randomfeeders.com.br>",
+	"license": "UNLICENSED",
+	"bugs": {
+		"url": "https://github.com/RandomFeeders/pasys-desktop/issues"
+	},
+	"homepage": "https://github.com/RandomFeeders/pasys-desktop#readme"
+}

@@ -1,0 +1,14 @@
+{
+	"arrowParens": "always",
+	"bracketSameLine": false,
+	"bracketSpacing": true,
+	"editorconfig": true,
+	"endOfLine": "crlf",
+	"htmlWhitespaceSensitivity": "css",
+	"printWidth": 120,
+	"quoteProps": "consistent",
+	"singleAttributePerLine": false,
+	"singleQuote": true,
+	"tabWidth": 4,
+	"useTabs": true
+}

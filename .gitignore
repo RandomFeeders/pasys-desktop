@@ -1,0 +1,20 @@
+# Dependency directory
+node_modules/
+
+# User files
+.hintrc
+
+# API keys and secrets
+.env
+
+# Editors
+.vscode/*
+!.vscode/settings.json
+.idea
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore built ts files
+build/**/*
