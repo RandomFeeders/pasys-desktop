@@ -9,7 +9,7 @@ export interface ModuleOptions {
 export const MODULE_OPTIONS_METADATA = 'module-options';
 
 export function Module(options: ModuleOptions) {
-	return function (target: Function): void {
+	return function (target: Constructor): void {
 		Reflect.defineMetadata(MODULE_OPTIONS_METADATA, options, target);
 	};
 }
