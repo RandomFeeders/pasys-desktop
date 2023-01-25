@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"baseUrl": "./",
+		"lib": ["ES5", "ES6", "DOM", "ES2022"],
+		"outDir": "build",
+		"target": "ES2022",
+		"module": "CommonJS",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"strict": true,
+		"strictNullChecks": false,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"sourceMap": true,
+		"allowJs": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules"]
+}
