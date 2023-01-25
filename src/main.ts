@@ -1,10 +1,16 @@
 import 'reflect-metadata';
+import { ElectronReloader } from './reloader';
 import { resolve as pathResolve } from 'path';
 import { app as electronApp, BrowserWindow } from 'electron';
 
 const app: {
+	reloader?: ElectronReloader;
 	main_window?: BrowserWindow;
-} = {};
+} = {
+	reloader: new ElectronReloader(pathResolve(__dirname, 'styles.css')),
+};
+
+app.reloader.startWatcher(1); // TODO: Remove hard-coded id
 
 function createMainWindow() {
 	app.main_window = new BrowserWindow({
