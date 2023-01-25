@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import { ElectronReloader } from './reloader';
 import { resolve as pathResolve } from 'path';
 import { app as electronApp, BrowserWindow } from 'electron';
+import { config } from './config';
 
 const app: {
 	reloader?: ElectronReloader;
@@ -14,14 +15,16 @@ app.reloader.startWatcher(1); // TODO: Remove hard-coded id
 
 function createMainWindow() {
 	app.main_window = new BrowserWindow({
-		width: 1280,
-		height: 720,
+		width: config.screen_width,
+		height: config.screen_height,
 		frame: false,
 		resizable: true,
+		icon: pathResolve(__dirname, 'assets/pasys-logo.png'),
 		webPreferences: {
 			nodeIntegration: true,
 			nodeIntegrationInWorker: true,
 			contextIsolation: false,
+			preload: pathResolve(__dirname, 'preload.js'),
 		},
 	});
 
