@@ -2,12 +2,16 @@
 	"name": "pasys-desktop",
 	"version": "0.0.0",
 	"main": "./build/main.js",
-	"type": "module",
 	"engines": {
 		"node": "^18.12.1",
 		"yarn": "1.22.19"
 	},
-	"scripts": {},
+	"scripts": {
+		"start": "yarn clear && yarn build && electron .",
+		"start:dev": "yarn clear && yarn build && concurrently -k -n Compiler,Electron \"nodemon\" \"electron .\"",
+		"build": "tsc && copyfiles -u 1 -e \"src/**/*{.js,.ts,.scss}\" src/**/* build/ && sass src/styles.scss build/styles.css --style compressed",
+		"clear": "rimraf build/"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/RandomFeeders/pasys-desktop.git"
@@ -17,5 +21,27 @@
 	"bugs": {
 		"url": "https://github.com/RandomFeeders/pasys-desktop/issues"
 	},
-	"homepage": "https://github.com/RandomFeeders/pasys-desktop#readme"
+	"homepage": "https://github.com/RandomFeeders/pasys-desktop#readme",
+	"dependencies": {
+		"@electron/remote": "^2.0.9",
+		"chokidar": "^3.5.3",
+		"dotenv": "^16.0.3",
+		"glob": "^8.1.0",
+		"reflect-metadata": "^0.1.13"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.0.1",
+		"@types/node": "^18.11.18",
+		"bootstrap": "^5.2.3",
+		"concurrently": "^7.6.0",
+		"copyfiles": "^2.4.1",
+		"electron": "^22.0.3",
+		"nodemon": "^2.0.20",
+		"rimraf": "^4.1.1",
+		"sass": "^1.57.1",
+		"typescript": "^4.9.4"
+	},
+	"peerDependencies": {
+		"@popperjs/core": "2.11.6"
+	}
 }
